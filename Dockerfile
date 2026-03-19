@@ -1,4 +1,4 @@
-FROM rust:1.80-slim-bookworm as builder
+FROM rust:latest as builder
 WORKDIR /usr/src/app
 COPY . .
 # We use mold linker for faster builds if needed, but standard cargo is fine
