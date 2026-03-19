@@ -1,0 +1,6 @@
+/target
+/build_*.log
+/check_output*.log
+/check_errors*.txt
+/dry_run_release.log
+/server_startup*.log

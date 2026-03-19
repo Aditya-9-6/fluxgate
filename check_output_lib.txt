@@ -1,0 +1,574 @@
+﻿cargo :     Checking fluxgate v3.5.0 (C:\Users\om laptop house\.gemini\antigravity\scratch\flux_gate)
+At line:1 char:1
++ cargo check --lib 2>&1 | Out-File -Encoding utf8 check_output_lib.txt
++ ~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (    Checking fl...atch\flux_gate):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+warning: unused import: `FluxError`
+ --> src\auth.rs:8:32
+  |
+8 | use crate::error::{FluxResult, FluxError};
+  |                                ^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `info`
+ --> src\router\expert.rs:2:15
+  |
+2 | use tracing::{info, debug};
+  |               ^^^^
+
+warning: unused import: `debug`
+ --> src\router\optimizer.rs:4:21
+  |
+4 | use tracing::{info, debug};
+  |                     ^^^^^
+
+warning: variant `EU_GDPR` should have an upper camel case name
+ --> src\router\compliance.rs:6:5
+  |
+6 |     EU_GDPR,
+  |     ^^^^^^^ help: convert the identifier to upper camel case: `EuGdpr`
+  |
+  = note: `#[warn(non_camel_case_types)]` (part of `#[warn(nonstandard_style)]`) on by default
+
+warning: variant `US_HIPAA` should have an upper camel case name
+ --> src\router\compliance.rs:7:5
+  |
+7 |     US_HIPAA,
+  |     ^^^^^^^^ help: convert the identifier to upper camel case: `UsHipaa`
+
+warning: variant `US_FEDRAMP` should have an upper camel case name
+ --> src\router\compliance.rs:8:5
+  |
+8 |     US_FEDRAMP,
+  |     ^^^^^^^^^^ help: convert the identifier to upper camel case: `UsFedramp`
+
+warning: unused import: `Mutex`
+ --> src\router.rs:7:22
+  |
+7 | use std::sync::{Arc, Mutex};
+  |                      ^^^^^
+
+warning: unused import: `tracing::info`
+  --> src\router.rs:10:5
+   |
+10 | use tracing::info;
+   |     ^^^^^^^^^^^^^
+
+warning: unused imports: `Deserialize` and `Serialize`
+ --> src\billing\mod.rs:4:13
+  |
+4 | use serde::{Serialize, Deserialize};
+  |             ^^^^^^^^^  ^^^^^^^^^^^
+
+warning: unused import: `std::sync::Arc`
+ --> src\billing\mod.rs:6:5
+  |
+6 | use std::sync::Arc;
+  |     ^^^^^^^^^^^^^^
+
+warning: unused import: `bigdecimal::BigDecimal`
+ --> src\proxy.rs:5:5
+  |
+5 | use bigdecimal::BigDecimal;
+  |     ^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `std::collections::HashMap`
+ --> src\prompt_registry.rs:2:5
+  |
+2 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused imports: `Deserialize` and `Serialize`
+ --> src\providers\openai.rs:2:13
+  |
+2 | use serde::{Deserialize, Serialize};
+  |             ^^^^^^^^^^^  ^^^^^^^^^
+
+warning: unused import: `serde_json::json`
+ --> src\genesis\synthesis.rs:2:5
+  |
+2 | use serde_json::json;
+  |     ^^^^^^^^^^^^^^^^
+
+warning: type `f8` should have an upper camel case name
+  --> src\genesis\graft.rs:11:10
+   |
+11 | pub type f8 = u8; // Placeholder for 8-bit quantization
+   |          ^^ help: convert the identifier to upper camel case (notice the capitalization): `F8`
+
+warning: unused import: `info`
+ --> src\security\chronolock.rs:4:15
+  |
+4 | use tracing::{info, debug};
+  |               ^^^^
+
+warning: type `SPIFFE_SVID` should have an upper camel case name
+ --> src\security\zerotrust.rs:4:12
+  |
+4 | pub struct SPIFFE_SVID {
+  |            ^^^^^^^^^^^ help: convert the identifier to upper camel case: `SpiffeSvid`
+
+warning: unused import: `info`
+ --> src\intelligence\hallucination.rs:1:15
+  |
+1 | use tracing::{info, warn, debug};
+  |               ^^^^
+
+warning: unused import: `info`
+ --> src\agents\dna_fingerprint.rs:4:15
+  |
+4 | use tracing::{info, warn, debug};
+  |               ^^^^
+
+warning: unused import: `info`
+ --> src\agents\bounds.rs:2:15
+  |
+2 | use tracing::{info, warn};
+  |               ^^^^
+
+warning: unused import: `info`
+ --> src\agents\fingerprint.rs:4:15
+  |
+4 | use tracing::{info, warn, debug};
+  |               ^^^^
+
+warning: unused import: `debug`
+ --> src\agents\loop_protection.rs:3:21
+  |
+3 | use tracing::{warn, debug};
+  |                     ^^^^^
+
+warning: unused import: `serde_json::json`
+ --> src\agents\mcp.rs:2:5
+  |
+2 | use serde_json::json;
+  |     ^^^^^^^^^^^^^^^^
+
+warning: unused import: `async_trait::async_trait`
+ --> src\semantic\caching.rs:1:5
+  |
+1 | use async_trait::async_trait;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `std::pin::Pin`
+ --> src\performance\streaming.rs:1:5
+  |
+1 | use std::pin::Pin;
+  |     ^^^^^^^^^^^^^
+
+warning: unused import: `Extension`
+ --> src\api.rs:3:19
+  |
+3 |     Router, Json, Extension,
+  |                   ^^^^^^^^^
+
+warning: unused import: `Span`
+  --> src\api.rs:10:46
+   |
+10 | use tracing::{info, warn, error, Instrument, Span};
+   |                                              ^^^^
+
+warning: unused import: `serde_json::json`
+ --> src\guardrails.rs:1:5
+  |
+1 | use serde_json::json;
+  |     ^^^^^^^^^^^^^^^^
+
+warning: unused import: `FromRow`
+ --> src\ledger.rs:1:43
+  |
+1 | use sqlx::{PgPool, Postgres, Transaction, FromRow};
+  |                                           ^^^^^^^
+
+warning: unused import: `std::sync::Arc`
+ --> src\ledger.rs:4:5
+  |
+4 | use std::sync::Arc;
+  |     ^^^^^^^^^^^^^^
+
+warning: unused import: `info`
+ --> src\firewall.rs:1:15
+  |
+1 | use tracing::{info, warn, debug};
+  |               ^^^^
+
+error[E0277]: the `?` operator can only be used in an async function that returns `Result` or `Option` (or another 
+type that implements `FromResidual`)
+   --> src\api.rs:179:101
+    |
+173 |   ) -> impl IntoResponse {
+    |  ________________________-
+174 | |     let request_id = get_request_id(&HeaderMap::new()); // Path lacks headers, using empty for now or refactor
+175 | |     let row = sqlx::query("SELECT balance, currency FROM wallets WHERE entity_id = $1")
+176 | |         .bind(&id)
+...   |
+179 | |         .map_err(|_| (StatusCode::INTERNAL_SERVER_ERROR, error_json("Database error", &request_id)))?;
+    | |                                                                                                     ^ cannot 
+use the `?` operator in an async function that returns `axum::http::Response<axum::body::Body>`
+...   |
+188 | |     (StatusCode::NOT_FOUND, error_json("Wallet not found", &request_id)).into_response()
+189 | | }
+    | |_- this function should return `Result` or `Option` to accept `?`
+
+warning: variable does not need to be mutable
+  --> src\ghost.rs:94:13
+   |
+94 |         let mut current_query = query.to_string();
+   |             ----^^^^^^^^^^^^^
+   |             |
+   |             help: remove this `mut`
+   |
+   = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `Row`
+ --> src\auth.rs:1:20
+  |
+1 | use sqlx::{PgPool, Row};
+  |                    ^^^
+
+warning: unused import: `Row`
+ --> src\cache.rs:4:20
+  |
+4 | use sqlx::{PgPool, Row};
+  |                    ^^^
+
+warning: unused import: `Digest`
+ --> src\security\integrity.rs:1:20
+  |
+1 | use sha2::{Sha256, Digest};
+  |                    ^^^^^^
+
+warning: unused import: `PublicKey`
+ --> src\security\quantum.rs:3:28
+  |
+3 | use pqcrypto_traits::kem::{PublicKey, SecretKey, Ciphertext, SharedSecret};
+  |                            ^^^^^^^^^
+
+warning: unused import: `SecretKey`
+ --> src\security\quantum.rs:3:39
+  |
+3 | use pqcrypto_traits::kem::{PublicKey, SecretKey, Ciphertext, SharedSecret};
+  |                                       ^^^^^^^^^
+
+warning: variable does not need to be mutable
+  --> src\router.rs:53:13
+   |
+53 |         let mut fallback = crate::fallback::FallbackManager::new();
+   |             ----^^^^^^^^
+   |             |
+   |             help: remove this `mut`
+
+warning: unused variable: `model`
+  --> src\router.rs:65:46
+   |
+65 |     pub async fn select_best_upstream(&self, model: &str, strategy: RoutingStrategy) -> (HttpPeer, String) {
+   |                                              ^^^^^ help: if this is intentional, prefix it with an underscore: 
+`_model`
+   |
+   = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `speculative_header`
+   --> src\proxy.rs:547:25
+    |
+547 |             if let Some(speculative_header) = self.icarus.speculate_response_header(&ctx.prompt) {
+    |                         ^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: 
+`_speculative_header`
+
+warning: unused variable: `challenge`
+  --> src\pow.rs:13:36
+   |
+13 |     pub async fn verify_pow(&self, challenge: &str, nonce: &str) -> bool { true }
+   |                                    ^^^^^^^^^ help: if this is intentional, prefix it with an underscore: 
+`_challenge`
+
+warning: unused variable: `nonce`
+  --> src\pow.rs:13:53
+   |
+13 |     pub async fn verify_pow(&self, challenge: &str, nonce: &str) -> bool { true }
+   |                                                     ^^^^^ help: if this is intentional, prefix it with an 
+underscore: `_nonce`
+
+warning: unused variable: `prompt`
+  --> src\eval.rs:10:40
+   |
+10 |     pub async fn evaluate_async(&self, prompt: String, response: String, provider: String, model: String) {
+   |                                        ^^^^^^ help: if this is intentional, prefix it with an underscore: 
+`_prompt`
+
+warning: unused variable: `response`
+  --> src\eval.rs:10:56
+   |
+10 |     pub async fn evaluate_async(&self, prompt: String, response: String, provider: String, model: String) {
+   |                                                        ^^^^^^^^ help: if this is intentional, prefix it with an 
+underscore: `_response`
+
+warning: unused variable: `provider`
+  --> src\eval.rs:10:74
+   |
+10 |     pub async fn evaluate_async(&self, prompt: String, response: String, provider: String, model: String) {
+   |                                                                          ^^^^^^^^ help: if this is intentional, 
+prefix it with an underscore: `_provider`
+
+warning: unused variable: `model`
+  --> src\eval.rs:10:92
+   |
+10 |     pub async fn evaluate_async(&self, prompt: String, response: String, provider: String, model: String) {
+   |                                                                                            ^^^^^ help: if this is 
+intentional, prefix it with an underscore: `_model`
+
+warning: unused variable: `provider`
+ --> src\transform.rs:9:38
+  |
+9 |     pub fn transform_response(&self, provider: &str, text: &str) -> Option<String> {
+  |                                      ^^^^^^^^ help: if this is intentional, prefix it with an underscore: 
+`_provider`
+
+warning: unused variable: `provider`
+  --> src\transform.rs:13:42
+   |
+13 |     pub fn transform_stream_chunk(&self, provider: &str, text: &str) -> String {
+   |                                          ^^^^^^^^ help: if this is intentional, prefix it with an underscore: 
+`_provider`
+
+warning: unused variable: `state`
+  --> src\admin.rs:35:26
+   |
+35 | async fn get_stats(State(state): State<Arc<AdminState>>) -> Json<Value> {
+   |                          ^^^^^ help: if this is intentional, prefix it with an underscore: `_state`
+
+warning: unused variable: `request`
+  --> src\providers\anthropic.rs:20:34
+   |
+20 |     async fn send_request(&self, request: UnifiedRequest) -> Result<UnifiedResponse, ProviderError> {
+   |                                  ^^^^^^^ help: if this is intentional, prefix it with an underscore: `_request`
+
+warning: unused variable: `request`
+  --> src\providers\google_gemini.rs:14:34
+   |
+14 |     async fn send_request(&self, request: UnifiedRequest) -> Result<UnifiedResponse, ProviderError> {
+   |                                  ^^^^^^^ help: if this is intentional, prefix it with an underscore: `_request`
+
+warning: unused variable: `request`
+  --> src\providers\ollama.rs:14:34
+   |
+14 |     async fn send_request(&self, request: UnifiedRequest) -> Result<UnifiedResponse, ProviderError> {
+   |                                  ^^^^^^^ help: if this is intentional, prefix it with an underscore: `_request`
+
+warning: unused variable: `model`
+ --> src\genesis\graft.rs:6:33
+  |
+6 |     pub fn graft_weights(&self, model: &str, weights: &[f8]) {
+  |                                 ^^^^^ help: if this is intentional, prefix it with an underscore: `_model`
+
+warning: unused variable: `weights`
+ --> src\genesis\graft.rs:6:46
+  |
+6 |     pub fn graft_weights(&self, model: &str, weights: &[f8]) {
+  |                                              ^^^^^^^ help: if this is intentional, prefix it with an underscore: 
+`_weights`
+
+warning: unused variable: `request`
+ --> src\oracle.rs:8:35
+  |
+8 |     pub fn classify_intent(&self, request: &UnifiedRequest) -> (String, f32) {
+  |                                   ^^^^^^^ help: if this is intentional, prefix it with an underscore: `_request`
+
+warning: unused variable: `intent`
+  --> src\oracle.rs:12:33
+   |
+12 |     pub fn suggest_model(&self, intent: &str) -> String {
+   |                                 ^^^^^^ help: if this is intentional, prefix it with an underscore: `_intent`
+
+warning: unused variable: `count`
+  --> src\oracle.rs:16:40
+   |
+16 |     pub fn record_traffic_pulse(&self, count: u64) {}
+   |                                        ^^^^^ help: if this is intentional, prefix it with an underscore: `_count`
+
+warning: unused variable: `path`
+  --> src\wasm_filter.rs:26:32
+   |
+26 |     pub fn load_plugins(&self, path: &str) -> anyhow::Result<()> { Ok(()) }
+   |                                ^^^^ help: if this is intentional, prefix it with an underscore: `_path`
+
+warning: unused variable: `path`
+  --> src\wasm_filter.rs:27:36
+   |
+27 |     pub fn start_hot_reload(&self, path: String) {}
+   |                                    ^^^^ help: if this is intentional, prefix it with an underscore: `_path`
+
+warning: unused variable: `tx_id`
+  --> src\security\chronolock.rs:43:41
+   |
+43 |     pub fn verify_temporal_proof(&self, tx_id: &str, proof: &str, timestamp: u128) -> bool {
+   |                                         ^^^^^ help: if this is intentional, prefix it with an underscore: `_tx_id`
+
+warning: unused variable: `sk`
+  --> src\security\quantum.rs:31:18
+   |
+31 |         let (pk, sk) = kyber768::keypair();
+   |                  ^^ help: if this is intentional, prefix it with an underscore: `_sk`
+
+warning: unused variable: `message`
+  --> src\security\quantum.rs:49:46
+   |
+49 |     pub fn verify_sovereign_signature(&self, message: &[u8], signature: &[u8], public_key: &[u8]) -> bool {
+   |                                              ^^^^^^^ help: if this is intentional, prefix it with an underscore: 
+`_message`
+
+warning: unused variable: `signature`
+  --> src\security\quantum.rs:49:62
+   |
+49 |     pub fn verify_sovereign_signature(&self, message: &[u8], signature: &[u8], public_key: &[u8]) -> bool {
+   |                                                              ^^^^^^^^^ help: if this is intentional, prefix it 
+with an underscore: `_signature`
+
+warning: unused variable: `public_key`
+  --> src\security\quantum.rs:49:80
+   |
+49 |     pub fn verify_sovereign_signature(&self, message: &[u8], signature: &[u8], public_key: &[u8]) -> bool {
+   |                                                                                ^^^^^^^^^^ help: if this is 
+intentional, prefix it with an underscore: `_public_key`
+
+warning: unused variable: `final_output`
+  --> src\intelligence\federated.rs:27:60
+   |
+27 |     pub fn capture_knowledge(&self, redacted_prompt: &str, final_output: &str) -> Option<KnowledgePacket> {
+   |                                                            ^^^^^^^^^^^^ help: if this is intentional, prefix it 
+with an underscore: `_final_output`
+
+warning: unused variable: `response`
+  --> src\intelligence\interpretability.rs:14:35
+   |
+14 |     pub fn trace_rationale(&self, response: &str) -> Value {
+   |                                   ^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_response`
+
+warning: unused variable: `trace`
+  --> src\intelligence\interpretability.rs:34:42
+   |
+34 |     pub fn check_bias_attribution(&self, trace: &Value) -> bool {
+   |                                          ^^^^^ help: if this is intentional, prefix it with an underscore: 
+`_trace`
+
+warning: unused variable: `prompt`
+  --> src\intelligence\deception_detector.rs:34:37
+   |
+34 |     pub fn detect_sycophancy(&self, prompt: &str, response: &str) -> bool {
+   |                                     ^^^^^^ help: if this is intentional, prefix it with an underscore: `_prompt`
+
+warning: unused variable: `response`
+  --> src\intelligence\deception_detector.rs:34:51
+   |
+34 |     pub fn detect_sycophancy(&self, prompt: &str, response: &str) -> bool {
+   |                                                   ^^^^^^^^ help: if this is intentional, prefix it with an 
+underscore: `_response`
+
+warning: unused variable: `latency`
+  --> src\ecosystem\intelligence.rs:27:57
+   |
+27 |     pub fn contribute_telemetry(&mut self, model: &str, latency: u32, success: bool) {
+   |                                                         ^^^^^^^ help: if this is intentional, prefix it with an 
+underscore: `_latency`
+
+warning: unused variable: `success`
+  --> src\ecosystem\intelligence.rs:27:71
+   |
+27 |     pub fn contribute_telemetry(&mut self, model: &str, latency: u32, success: bool) {
+   |                                                                       ^^^^^^^ help: if this is intentional, 
+prefix it with an underscore: `_success`
+
+warning: unused variable: `agent_id`
+  --> src\agents\trajectory.rs:31:35
+   |
+31 |     pub fn get_latent_path(&self, agent_id: &str) -> Vec<f32> {
+   |                                   ^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_agent_id`
+
+warning: unused variable: `packet`
+  --> src\mesh\protocol.rs:19:39
+   |
+19 |     pub async fn route_message(&self, packet: &str) {
+   |                                       ^^^^^^ help: if this is intentional, prefix it with an underscore: `_packet`
+
+warning: unused variable: `packet`
+  --> src\mesh\protocol.rs:25:38
+   |
+25 |     pub fn verify_sovereignty(&self, packet: &str) -> bool {
+   |                                      ^^^^^^ help: if this is intentional, prefix it with an underscore: `_packet`
+
+warning: unused variable: `payload`
+  --> src\mesh\protocol.rs:47:50
+   |
+47 |     pub fn broadcast_event(&self, event_id: u32, payload: &[u8]) -> anyhow::Result<()> {
+   |                                                  ^^^^^^^ help: if this is intentional, prefix it with an 
+underscore: `_payload`
+
+warning: unused variable: `data_id`
+  --> src\sovereignty\layer.rs:15:36
+   |
+15 |     pub fn enforce_boundary(&self, data_id: &str, allowed_zone: &str, current_zone: &str) -> bool {
+   |                                    ^^^^^^^ help: if this is intentional, prefix it with an underscore: `_data_id`
+
+warning: unused variable: `state`
+   --> src\api.rs:298:33
+    |
+298 | pub async fn health_check(State(state): State<Arc<ApiState>>) -> impl IntoResponse {
+    |                                 ^^^^^ help: if this is intentional, prefix it with an underscore: `_state`
+
+warning: unused variable: `state`
+   --> src\api.rs:303:35
+    |
+303 | pub async fn metrics_export(State(state): State<Arc<ApiState>>) -> impl IntoResponse {
+    |                                   ^^^^^ help: if this is intentional, prefix it with an underscore: `_state`
+
+warning: unused variable: `user_id`
+ --> src\governance.rs:6:34
+  |
+6 |     pub fn enforce_policy(&self, user_id: &str, action: &str) -> bool {
+  |                                  ^^^^^^^ help: if this is intentional, prefix it with an underscore: `_user_id`
+
+warning: unused variable: `action`
+ --> src\governance.rs:6:49
+  |
+6 |     pub fn enforce_policy(&self, user_id: &str, action: &str) -> bool {
+  |                                                 ^^^^^^ help: if this is intentional, prefix it with an underscore: 
+`_action`
+
+warning: unused variable: `temp`
+ --> src\refiner.rs:6:47
+  |
+6 |     pub fn evolve_prompt(&self, prompt: &str, temp: f32) -> String {
+  |                                               ^^^^ help: if this is intentional, prefix it with an underscore: 
+`_temp`
+
+warning: unused variable: `ram_req`
+ --> src\grid.rs:6:38
+  |
+6 |     pub fn select_best_worker(&self, ram_req: u64, gpu_req: f32) -> Option<WorkerNode> {
+  |                                      ^^^^^^^ help: if this is intentional, prefix it with an underscore: `_ram_req`
+
+warning: unused variable: `gpu_req`
+ --> src\grid.rs:6:52
+  |
+6 |     pub fn select_best_worker(&self, ram_req: u64, gpu_req: f32) -> Option<WorkerNode> {
+  |                                                    ^^^^^^^ help: if this is intentional, prefix it with an 
+underscore: `_gpu_req`
+
+warning: unused variable: `task_id`
+ --> src\kernel.rs:6:33
+  |
+6 |     pub fn schedule_task(&self, task_id: String, priority: u8) {
+  |                                 ^^^^^^^ help: if this is intentional, prefix it with an underscore: `_task_id`
+
+warning: unused variable: `priority`
+ --> src\kernel.rs:6:50
+  |
+6 |     pub fn schedule_task(&self, task_id: String, priority: u8) {
+  |                                                  ^^^^^^^^ help: if this is intentional, prefix it with an 
+underscore: `_priority`
+
+For more information about this error, try `rustc --explain E0277`.
+warning: `fluxgate` (lib) generated 85 warnings
+error: could not compile `fluxgate` (lib) due to 1 previous error; 85 warnings emitted

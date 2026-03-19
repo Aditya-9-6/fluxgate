@@ -1,0 +1,168 @@
+openapi: 3.0.0
+info:
+  title: FluxGate Secure AI Gateway API
+  description: High-performance, memory-safe, deterministic routing layer for AI agents.
+  version: 1.0.0
+servers:
+  - url: https://api.fluxgate.io/v1
+paths:
+  /v1/process:
+    post:
+      summary: Send prompt to autonomous agent through secure gateway
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                prompt:
+                  type: string
+                session_id:
+                  type: string
+      responses:
+        '200':
+          description: Processed response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  response:
+                    type: string
+  /v1/stream:
+    post:
+      summary: Stream prompt response from gateway
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: SSE Stream
+  /client/stats:
+    get:
+      summary: Get real-time tenant stats for dashboard
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Tenant Stats JSON
+  /v1/keys:
+    get:
+      summary: List API keys for the current user
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: List of API keys
+  /v1/keys/{hash}:
+    post:
+      summary: Revoke a specific API key
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: hash
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Key revoked
+  /v1/audit/logs:
+    get:
+      summary: Query audit logs with filtering and pagination
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: limit
+          in: query
+          schema: {type: integer, default: 50}
+        - name: offset
+          in: query
+          schema: {type: integer, default: 0}
+        - name: event_type
+          in: query
+          schema: {type: string}
+      responses:
+        '200':
+          description: List of audit logs
+  /v1/transactions:
+    get:
+      summary: Get billing/transaction report as CSV
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: X-Entity-ID
+          in: header
+          required: true
+          schema: {type: string}
+      responses:
+        '200':
+          description: CSV Billing Report
+          content:
+            text/csv:
+              schema: {type: string}
+  /v1/agents/bulk:
+    post:
+      summary: Bulk register agents for fleet tracking
+      security:
+        - BearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                agents:
+                  type: array
+                  items: {type: string}
+      responses:
+        '201':
+          description: Agents registered
+  /v1/webhooks:
+    get:
+      summary: List registered webhooks
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: List of webhooks
+    post:
+      summary: Register a new webhook
+      security:
+        - BearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                url: {type: string}
+                events:
+                  type: array
+                  items: {type: string}
+      responses:
+        '201':
+          description: Webhook registered
+  /v1/webhooks/{id}:
+    post:
+      summary: Delete a specific webhook
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: {type: string, format: uuid}
+      responses:
+        '200':
+          description: Webhook deleted
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
